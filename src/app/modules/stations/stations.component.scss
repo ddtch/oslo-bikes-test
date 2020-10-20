@@ -1,0 +1,14 @@
+.wrapper{
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+.list-view{
+  app-info-card{
+    display: block;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,30 @@
+<agm-map
+  [latitude]="59.9139"
+  [longitude]="10.7522"
+  [zoom]="14"
+  [disableDefaultUI]="false"
+  (mapClick)="onMapClicked($event)">
+
+  <!--
+    Of course if we have more time, we could add things like active marker color,
+    more correct positioning of info window etc...
+  -->
+  <agm-marker
+    *ngFor="let s of stations; let i = index"
+    (markerClick)="onMarkerClicked(s, i)"
+    [latitude]="s.lat"
+    [iconUrl]="'assets/svg/dot.svg'"
+    [longitude]="s.lon"
+    [label]="{
+          color: '#ffffff',
+          fontSize: '9px',
+          text: (s.capacity).toString()
+      }">
+
+    <agm-snazzy-info-window [maxWidth]="300" [closeWhenOthersOpen]="true">
+      <ng-template>
+        <app-info-card [station]="s"></app-info-card>
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+</agm-map>

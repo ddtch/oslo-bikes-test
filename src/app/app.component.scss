@@ -1,0 +1,35 @@
+$mainColor: #005fc9;
+
+.header {
+  padding: 12px 20px;
+  position: sticky;
+  background: #fff;
+  z-index: 2;
+  top: 0;
+  border-bottom: 1px solid $mainColor;
+
+  .header-content-holder {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .logo{
+      color: $mainColor;
+    }
+
+    .nav-list {
+      display: flex;
+      margin-left: auto;
+      justify-self: flex-end;
+      list-style: none;
+      color: $mainColor;
+
+      li {
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

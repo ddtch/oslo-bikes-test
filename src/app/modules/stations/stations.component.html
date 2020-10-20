@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Map">
+      <app-map-view
+        [stations]="(stations$ | async)"
+        (mapClicked)="mapClicked($event)">
+      </app-map-view>
+    </mat-tab>
+    <mat-tab label="List">
+      <div class="list-view">
+        <cdk-virtual-scroll-viewport [itemSize]="12" style="height:600px">
+          <app-info-card *cdkVirtualFor="let s of (stations$ | async)" [station]="s"></app-info-card>
+        </cdk-virtual-scroll-viewport>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

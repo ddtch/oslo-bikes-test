@@ -1,0 +1,13 @@
+<div class="info-content-holder">
+  <div class="title">{{station.name}}</div>
+  <div class="meta-info">
+    <div>
+      <img src="assets/svg/bike-a.svg"/>
+      available {{station.num_bikes_available | pluralize: 'bike'}}
+    </div>
+    <div>
+      <img src="assets/svg/parking.svg"/>
+      for parking available {{station.num_docks_available | pluralize: 'slot'}}
+    </div>
+  </div>
+</div>
